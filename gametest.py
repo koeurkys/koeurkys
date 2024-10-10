@@ -12,6 +12,15 @@ class GameTest:
     self.assertGreaterEqual(nombre, 1)
     self.assertLessEqual(nombre, 100)
 
+    def test_saisie_utilisateur_valide(self):
+    # Tests pour les valeur comprise entre 1 et 100
+    self.assertEqual(saisie_utilisateur(50),50)  # 50 est valide
+    self.assertEqual(saisie_utilisateur(12), 12) # 12 est valide
+    self.assertEqual(saisie_utilisateur(93), 93) # 93 est valide
+
+            
+    
+
 # Fonctions
 
 
