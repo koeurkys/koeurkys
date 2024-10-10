@@ -24,6 +24,15 @@ class GameTest:
       saisie_utilisateur(-1)  # Valeur négative
     with self.assertRaises(ValueError):
       saisie_utilisateur(-100)  # Valeur très négative
+    # Tests pour les valeurs au-dessus de 100
+    with self.assertRaises(ValueError):
+      saisie_utilisateur(101)  # Juste au-dessus de 100
+    with self.assertRaises(ValueError):
+      saisie_utilisateur(150)  # Valeur éloignée de 100
+    with self.assertRaises(ValueError):
+      saisie_utilisateur(1000)  # Valeur très élevée
+
+
     
             
     
