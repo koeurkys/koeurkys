@@ -31,6 +31,13 @@ class GameTest:
       saisie_utilisateur(150)  # Valeur éloignée de 100
     with self.assertRaises(ValueError):
       saisie_utilisateur(1000)  # Valeur très élevée
+    # Tests pour s'assurer que la valeur est un entier
+    with self.assertRaises(TypeError):
+      saisie_utilisateur("50")  # Chaîne de caractères
+    with self.assertRaises(TypeError):
+      saisie_utilisateur(50.5)  # Float
+    with self.assertRaises(TypeError):
+      saisie_utilisateur([50])  # Liste
 
 
     
