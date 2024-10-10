@@ -17,7 +17,14 @@ class GameTest:
     self.assertEqual(saisie_utilisateur(50),50)  # 50 est valide
     self.assertEqual(saisie_utilisateur(12), 12) # 12 est valide
     self.assertEqual(saisie_utilisateur(93), 93) # 93 est valide
-
+    # Tests pour les valeurs en dessous de 1
+    with self.assertRaises(ValueError):
+      saisie_utilisateur(0)  # En dessous de 1
+    with self.assertRaises(ValueError):
+      saisie_utilisateur(-1)  # Valeur négative
+    with self.assertRaises(ValueError):
+      saisie_utilisateur(-100)  # Valeur très négative
+    
             
     
 
